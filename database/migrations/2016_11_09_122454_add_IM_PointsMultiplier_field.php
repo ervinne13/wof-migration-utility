@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class AddSupplierToBankPostingGroup extends Migration {
+class AddIMPointsMultiplierField extends Migration {
 
     /**
      * Run the migrations.
@@ -11,8 +11,8 @@ class AddSupplierToBankPostingGroup extends Migration {
      * @return void
      */
     public function up() {
-        Schema::table("tblACC_BankPostingGroup", function($table) {
-            $table->string("BPG_COA_FK_SupplierID", 30)->nullable();
+        Schema::table('tblINV_Item', function($table) {
+            $table->double('IM_PointsMultiplier', 10, 4)->default(0);
         });
     }
 
@@ -22,8 +22,8 @@ class AddSupplierToBankPostingGroup extends Migration {
      * @return void
      */
     public function down() {
-        Schema::table('tblACC_BankPostingGroup', function($table) {
-            $table->dropColumn('BPG_COA_FK_SupplierID');
+        Schema::table('tblINV_Item', function($table) {
+            $table->dropColumn('IM_PointsMultiplier');
         });
     }
 
