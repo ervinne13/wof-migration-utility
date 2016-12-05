@@ -17,8 +17,13 @@ class RemoveUnneededFieldsInDocTracking extends Migration {
             DB::statement('TRUNCATE "tblCOM_DocTracking" cascade;');
 
             Schema::table('tblCOM_DocTracking', function ($table) {
-                $table->dropColumn('DT_FK_NSCode');
-                $table->dropColumn('DT_Amount');
+                if (Schema::hasColumn('tblCOM_DocTracking', 'DT_FK_NSCode')) {
+                    $table->dropColumn('DT_FK_NSCode');
+                }
+
+                if (Schema::hasColumn('tblCOM_DocTracking', 'DT_Amount')) {
+                    $table->dropColumn('DT_Amount');
+                }
             });
 
             DB::commit();
