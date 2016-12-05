@@ -21,7 +21,7 @@ class AddAppliesToLocationFieldOnApprovalSetup extends Migration {
             Schema::create('tblCOM_ModuleApprovalSetup', function (Blueprint $table) {
                 $table->string("MAS_Id", 50);
                 $table->bigInteger('MAS_FK_M_Module_id')->unsigned();
-                $table->string('MAS_Location', 30)->default('All');
+                $table->string('MAS_LocationType', 30)->default('Any');
                 $table->string('MAS_FK_AS_Name', 30);
                 $table->string('MAS_HeaderTableName', 40)->nullable();
                 $table->string('MAS_DetailTableName', 40)->nullable();
