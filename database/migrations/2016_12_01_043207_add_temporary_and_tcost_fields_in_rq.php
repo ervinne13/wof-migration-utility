@@ -16,8 +16,13 @@ class AddTemporaryAndTcostFieldsInRq extends Migration {
             DB::beginTransaction();
 
             Schema::table('tblINV_RQDetail', function ($table) {
-                $table->decimal('RQD_TCost', 12, 4)->nullable();
-                $table->boolean('RQD_Temporary')->default(false);
+                if (!Schema::hasColumn('tblINV_RQDetail', 'RQD_TCost')) {
+                    $table->decimal('RQD_TCost', 12, 4)->nullable();
+                }
+
+                if (!Schema::hasColumn('tblINV_RQDetail', 'RQD_Temporary')) {
+                    $table->boolean('RQD_Temporary')->default(false);
+                }
             });
 
             DB::commit();
