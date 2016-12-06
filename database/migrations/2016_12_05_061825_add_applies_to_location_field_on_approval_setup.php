@@ -51,7 +51,7 @@ class AddAppliesToLocationFieldOnApprovalSetup extends Migration {
                 $table->string('ModifiedBy', 30);
                 $table->timestamp('DateModified');
 
-                $table->primary(['MASV_Id']);
+                $table->primary(['MASV_Id', 'MASV_Variable']);
 
                 $table->foreign('MASV_Id')
                         ->references('MAS_Id')
