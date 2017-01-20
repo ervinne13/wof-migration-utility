@@ -79,6 +79,17 @@ class PostingFunctionSeeder extends Seeder {
         $postRPFunction->F_Inside       = 1;
 
         $postRPFunction->save();
+
+        $postDCMFunction = ModuleFunction::findOrNew(207);
+
+        $postDCMFunction->F_Function_id  = 207;
+        $postDCMFunction->F_FunctionName = 'Post';
+        $postDCMFunction->F_FK_Module_id = 47;
+        $postDCMFunction->F_Order_id     = 10;
+        $postDCMFunction->F_Trigger      = 'post';
+        $postDCMFunction->F_Inside       = 1;
+
+        $postDCMFunction->save();
     }
 
 }
