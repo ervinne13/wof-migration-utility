@@ -15,7 +15,7 @@ class AddApprovalLocationFieldInRq extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblINV_RQ', function ($table) {
+            Schema::table('tblINV_RQDetail', function ($table) {
 
                 if (!Schema::hasColumn('tblINV_RQDetail', 'RQD_ApprovalLocation')) {
                         $table->string('RQD_ApprovalLocation', 30)->nullable();
@@ -38,7 +38,7 @@ class AddApprovalLocationFieldInRq extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblINV_RQ', function ($table) {
+            Schema::table('tblINV_RQDetail', function ($table) {
 
                 if (Schema::hasColumn('tblINV_RQDetail', 'RQD_ApprovalLocation')) {
                     $table->dropColumn('RQD_ApprovalLocation');
