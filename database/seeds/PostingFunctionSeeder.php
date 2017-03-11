@@ -3,6 +3,9 @@
 use App\Models\Module\ModuleFunction;
 use Illuminate\Database\Seeder;
 
+/**
+ * php artisan db:seed --class=PostingFunctionSeeder
+ */
 class PostingFunctionSeeder extends Seeder {
 
     /**
@@ -90,6 +93,19 @@ class PostingFunctionSeeder extends Seeder {
         $postDCMFunction->F_Inside       = 1;
 
         $postDCMFunction->save();
+
+        //  Local Modules
+
+        $postTOLFunction = ModuleFunction::findOrNew(208);
+
+        $postTOLFunction->F_Function_id  = 208;
+        $postTOLFunction->F_FunctionName = 'Post';
+        $postTOLFunction->F_FK_Module_id = 97;
+        $postTOLFunction->F_Order_id     = 10;
+        $postTOLFunction->F_Trigger      = 'post';
+        $postTOLFunction->F_Inside       = 1;
+
+        $postTOLFunction->save();
     }
 
 }
