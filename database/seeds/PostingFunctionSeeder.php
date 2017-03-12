@@ -106,6 +106,18 @@ class PostingFunctionSeeder extends Seeder {
         $postTOLFunction->F_Inside       = 1;
 
         $postTOLFunction->save();
+
+
+        $postPOLFunction = ModuleFunction::findOrNew(209);
+
+        $postPOLFunction->F_Function_id  = 209;
+        $postPOLFunction->F_FunctionName = 'Post';
+        $postPOLFunction->F_FK_Module_id = 84;
+        $postPOLFunction->F_Order_id     = 10;
+        $postPOLFunction->F_Trigger      = 'post';
+        $postPOLFunction->F_Inside       = 1;
+
+        $postPOLFunction->save();
     }
 
 }
