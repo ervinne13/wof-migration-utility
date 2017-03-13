@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRemainingQtyInRqld extends Migration
-{
-   /**
+class AddRemainingQtyInRqld extends Migration {
+
+    /**
      * Run the migrations.
      *
      * @return void
@@ -18,7 +18,7 @@ class AddRemainingQtyInRqld extends Migration
             Schema::table('tblINV_RQLDetail', function ($table) {
 
                 if (!Schema::hasColumn('tblINV_RQLDetail', 'RQLD_RemainingQty')) {
-                    $table->boolean('RQLD_RemainingQty')->default(false);
+                    $table->decimal('RQLD_RemainingQty', 12, 4)->default(0);
                 }
             });
 
@@ -51,4 +51,5 @@ class AddRemainingQtyInRqld extends Migration
             throw $e;
         }
     }
+
 }
