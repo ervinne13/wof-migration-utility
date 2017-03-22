@@ -18,33 +18,33 @@ class AddSeriesToPoToSi extends Migration {
             Schema::table('tblCOM_PODetail', function ($table) {
 
                 if (!Schema::hasColumn('tblCOM_PODetail', 'POD_SeriesFrom')) {
-                    $table->integer('POD_SeriesFrom')->nullable();
+                    $table->integer('POD_SeriesFrom')->nullable()->default(0);
                 }
 
                 if (!Schema::hasColumn('tblCOM_PODetail', 'POD_SeriesTo')) {
-                    $table->integer('POD_SeriesTo')->nullable();
+                    $table->integer('POD_SeriesTo')->nullable()->default(0);
                 }
             });
 
             Schema::table('tblCOM_TODetail', function ($table) {
 
                 if (!Schema::hasColumn('tblCOM_TODetail', 'TOD_SeriesFrom')) {
-                    $table->integer('TOD_SeriesFrom')->nullable();
+                    $table->integer('TOD_SeriesFrom')->nullable()->default(0);
                 }
 
                 if (!Schema::hasColumn('tblCOM_TODetail', 'TOD_SeriesTo')) {
-                    $table->integer('TOD_SeriesTo')->nullable();
+                    $table->integer('TOD_SeriesTo')->nullable()->default(0);
                 }
             });
 
             Schema::table('tblINV_SalesInvoiceDetail', function ($table) {
 
                 if (!Schema::hasColumn('tblINV_SalesInvoiceDetail', 'SID_SeriesFrom')) {
-                    $table->integer('SID_SeriesFrom')->nullable();
+                    $table->integer('SID_SeriesFrom')->nullable()->default(0);
                 }
 
                 if (!Schema::hasColumn('tblINV_SalesInvoiceDetail', 'SID_SeriesTo')) {
-                    $table->integer('SID_SeriesTo')->nullable();
+                    $table->integer('SID_SeriesTo')->nullable()->default(0);
                 }
             });
 
