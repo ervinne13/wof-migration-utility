@@ -14,6 +14,9 @@ class GenerateSystemGeneratedNumberSeriesEntries extends Seeder {
      * @return void
      */
     public function run() {
+
+        DB::statement('TRUNCATE TABLE "tblCOM_SystemGeneratedNoSeries";');
+
         $getLastUsedNumbersRawQuery = 'SELECT MAX("IM_Item_id") AS "IM_LastNoUsed", "IM_FK_ItemType_id", "IM_FK_Category_id", "IM_FK_SubCategory_id" 
                                         FROM "tblINV_Item" 
                                         WHERE "IM_FK_ItemType_id" IS NOT NULL
@@ -24,13 +27,15 @@ class GenerateSystemGeneratedNumberSeriesEntries extends Seeder {
         $SGNSEntries = [];
         foreach ($lastUsedNumbers AS $lastUsedNumber) {
 
-            $id = "{$lastUsedNumber->IM_FK_ItemType_id}-{$lastUsedNumber->IM_FK_Category_id}-{$lastUsedNumber->IM_FK_SubCategory_id}";
+            $id             = "{$lastUsedNumber->IM_FK_ItemType_id}-{$lastUsedNumber->IM_FK_SubCategory_id}";
+            $idLength       = strlen($id);
+            $lastNumberUsed = substr($lastUsedNumber->IM_LastNoUsed, $idLength + 1, strlen($lastUsedNumber->IM_LastNoUsed));
 
             array_push($SGNSEntries, [
                 "SGNS_Id"         => $id,
                 "SGNS_StartNo"    => 0,
                 "SGNS_EndingNo"   => 999999,
-                "SGNS_LastNoUsed" => 0,
+                "SGNS_LastNoUsed" => intval($lastNumberUsed),
             ]);
         }
 

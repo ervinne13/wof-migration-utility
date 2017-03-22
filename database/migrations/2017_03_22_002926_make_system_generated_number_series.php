@@ -18,7 +18,7 @@ class MakeSystemGeneratedNumberSeries extends Migration {
             $table->string('SGNS_Id');
             $table->integer('SGNS_StartNo')->default(0);
             $table->integer('SGNS_EndingNo')->default(999999);
-            $table->string('SGNS_LastNoUsed')->nullable();
+            $table->integer('SGNS_LastNoUsed')->default(0);
 
             $table->primary('SGNS_Id');
         });
