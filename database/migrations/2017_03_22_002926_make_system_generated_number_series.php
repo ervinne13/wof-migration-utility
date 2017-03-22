@@ -16,8 +16,8 @@ class MakeSystemGeneratedNumberSeries extends Migration {
 
         Schema::create('tblCOM_SystemGeneratedNoSeries', function (Blueprint $table) {
             $table->string('SGNS_Id');
-            $table->string('SGNS_StartNo')->default(0);
-            $table->string('SGNS_EndingNo')->default(999999);
+            $table->integer('SGNS_StartNo')->default(0);
+            $table->integer('SGNS_EndingNo')->default(999999);
             $table->string('SGNS_LastNoUsed')->nullable();
 
             $table->primary('SGNS_Id');
