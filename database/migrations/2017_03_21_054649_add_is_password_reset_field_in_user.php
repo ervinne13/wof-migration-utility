@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIsPasswordResetFieldInUser extends Migration
-{
-      /**
+class AddIsPasswordResetFieldInUser extends Migration {
+
+    /**
      * Run the migrations.
      *
      * @return void
@@ -51,4 +51,5 @@ class AddIsPasswordResetFieldInUser extends Migration
             throw $e;
         }
     }
+
 }
