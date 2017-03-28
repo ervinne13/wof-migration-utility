@@ -3,7 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="WoF">
-            <file>file:/C:/Bitnami/wappstack-5.6.26-1/apps/wof-migration-utility/database/migrations/2017_03_22_195906_add_series_to_po_to_si.php</file>
+            <file>file:/C:/Bitnami/wappstack-5.6.26-1/apps/wof-migration-utility/database/migrations/2017_03_27_075332_add_receiving_sub_location.php</file>
         </group>
     </open-files>
 </project-private>
