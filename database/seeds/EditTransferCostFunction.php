@@ -23,7 +23,7 @@ class EditTransferCostFunction extends Seeder {
         $postAMLFunction->F_FK_Module_id = 96;
         $postAMLFunction->F_Order_id     = 10;
         $postAMLFunction->F_Trigger      = 'edit-approved-t-cost';
-        $postAMLFunction->F_Inside       = 0;
+        $postAMLFunction->F_Inside       = 1;
         $postAMLFunction->F_Outside      = 0;
 
         $postAMLFunction->save();
