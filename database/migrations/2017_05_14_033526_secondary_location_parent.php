@@ -18,7 +18,7 @@ class SecondaryLocationParent extends Migration {
             Schema::table('tblINV_Location', function ($table) {
 
                 if (!Schema::hasColumn('tblINV_Location', 'LOC_SecondaryRootParent_id')) {
-                    $table->json('LOC_SecondaryRootParent_id')->nullable();
+                    $table->string('LOC_SecondaryRootParent_id', 30)->nullable();
                 }
             });
 
