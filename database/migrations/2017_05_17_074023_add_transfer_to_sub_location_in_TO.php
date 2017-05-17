@@ -18,7 +18,7 @@ class AddTransferToSubLocationInTO extends Migration {
             Schema::table('tblCOM_TODetail', function ($table) {
 
                 if (!Schema::hasColumn('tblCOM_TODetail', 'TOD_TransferToSubLocation')) {
-                    $table->string('TOD_TransferToSubLocation', 30);
+                    $table->string('TOD_TransferToSubLocation', 30)->nullable();
                 }
             });
 
