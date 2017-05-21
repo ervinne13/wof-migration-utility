@@ -20,6 +20,10 @@ class AddTransferDestinationType extends Migration {
                 if (!Schema::hasColumn('tblCOM_TOL', 'TOL_TransferToType')) {
                     $table->string('TOL_TransferToType', 30)->nullable();
                 }
+
+                if (!Schema::hasColumn('tblCOM_TOL', 'TOL_TransferToMachineAssetID')) {
+                    $table->string('TOL_TransferToMachineAssetID', 30)->nullable();
+                }
             });
 
             DB::commit();
@@ -39,6 +43,10 @@ class AddTransferDestinationType extends Migration {
             DB::beginTransaction();
 
             Schema::table('tblCOM_TOL', function ($table) {
+
+                if (Schema::hasColumn('tblCOM_TOL', 'TOL_TransferToType')) {
+                    $table->dropColumn('TOL_TransferToType');
+                }
 
                 if (Schema::hasColumn('tblCOM_TOL', 'TOL_TransferToType')) {
                     $table->dropColumn('TOL_TransferToType');
