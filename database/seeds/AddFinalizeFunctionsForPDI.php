@@ -23,8 +23,8 @@ class AddFinalizeFunctionsForPDI extends Seeder {
         $finalizePD->F_FK_Module_id = 301;
         $finalizePD->F_Order_id     = 8;
         $finalizePD->F_Trigger      = 'finalize-pd';
-        $finalizePD->F_Inside       = 0;
-        $finalizePD->F_Outside      = 1;
+        $finalizePD->F_Inside       = 1;
+        $finalizePD->F_Outside      = 0;
 
         $finalizePD->save();
 
@@ -35,8 +35,8 @@ class AddFinalizeFunctionsForPDI extends Seeder {
         $finalizeTickets->F_FK_Module_id = 301;
         $finalizeTickets->F_Order_id     = 9;
         $finalizeTickets->F_Trigger      = 'finalize-tickets';
-        $finalizeTickets->F_Inside       = 0;
-        $finalizeTickets->F_Outside      = 1;
+        $finalizeTickets->F_Inside       = 1;
+        $finalizeTickets->F_Outside      = 0;
 
         $finalizeTickets->save();
     }
