@@ -17,8 +17,8 @@ class AddIssuanceDetailUom extends Migration {
 
             Schema::table('tblINV_IssuanceDetailDuodecuple', function ($table) {
 
-                if (!Schema::hasColumn('tblINV_IssuanceDetailDuodecuple', 'ISD_ItemUOMId')) {
-                    $table->integer('ISD_ItemUOMId')->nullable();
+                if (!Schema::hasColumn('tblINV_IssuanceDetailDuodecuple', 'ISD_ItemUOMCode')) {
+                    $table->string('ISD_ItemUOMCode', 30)->nullable();
                 }
             });
 
@@ -40,8 +40,8 @@ class AddIssuanceDetailUom extends Migration {
 
             Schema::table('tblINV_IssuanceDetailDuodecuple', function ($table) {
 
-                if (Schema::hasColumn('tblINV_IssuanceDetailDuodecuple', 'ISD_ItemUOMId')) {
-                    $table->dropColumn('ISD_ItemUOMId');
+                if (Schema::hasColumn('tblINV_IssuanceDetailDuodecuple', 'ISD_ItemUOMCode')) {
+                    $table->dropColumn('ISD_ItemUOMCode');
                 }
             });
 
