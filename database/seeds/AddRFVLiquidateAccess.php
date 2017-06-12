@@ -24,7 +24,7 @@ class AddRFVLiquidateAccess extends Seeder {
         $addApprovalSetupAccess->UA_Trigger      = 'financial-management/revolving-fund-voucher/liquidate';
         $addApprovalSetupAccess->UA_Icon         = "glyphicon-book";
         $addApprovalSetupAccess->UA_Access_id    = 931;
-        $addApprovalSetupAccess->UA_Inside       = 1;
+        $addApprovalSetupAccess->UA_Outside      = 1;
         $addApprovalSetupAccess->UA_Inline       = 1;
         $addApprovalSetupAccess->UA_Get          = 1;
 
