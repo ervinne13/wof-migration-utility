@@ -20,7 +20,7 @@ class AddRFVLiquidateAccess extends Seeder {
         $addApprovalSetupAccess = UserAccess::findOrNew(931);
 
         $addApprovalSetupAccess->UA_FK_Module_id = 283;
-        $addApprovalSetupAccess->UA_AccessName   = 'Add';
+        $addApprovalSetupAccess->UA_AccessName   = 'Liquidate';
         $addApprovalSetupAccess->UA_Trigger      = 'financial-management/revolving-fund-voucher/liquidate';
         $addApprovalSetupAccess->UA_Icon         = "glyphicon-book";
         $addApprovalSetupAccess->UA_Access_id    = 931;
