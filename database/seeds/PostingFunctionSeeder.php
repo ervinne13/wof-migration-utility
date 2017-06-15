@@ -121,7 +121,7 @@ class PostingFunctionSeeder extends Seeder {
 
         $postIRJFunction = ModuleFunction::findOrNew(89);
 
-        $postIRJFunction->F_Function_id  = 221;
+        $postIRJFunction->F_Function_id  = 225;
         $postIRJFunction->F_FunctionName = 'Post';
         $postIRJFunction->F_FK_Module_id = 89;
         $postIRJFunction->F_Order_id     = 10;
