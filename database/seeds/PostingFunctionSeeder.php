@@ -121,7 +121,7 @@ class PostingFunctionSeeder extends Seeder {
 
         $postIRJFunction = ModuleFunction::findOrNew(89);
 
-        $postIRJFunction->F_Function_id  = 221;
+        $postIRJFunction->F_Function_id  = 89;
         $postIRJFunction->F_FunctionName = 'Post';
         $postIRJFunction->F_FK_Module_id = 89;
         $postIRJFunction->F_Order_id     = 10;
@@ -129,6 +129,17 @@ class PostingFunctionSeeder extends Seeder {
         $postIRJFunction->F_Inside       = 1;
 
         $postIRJFunction->save();
+
+        $postRFRFunction = ModuleFunction::findOrNew(227);
+
+        $postRFRFunction->F_Function_id  = 227;
+        $postRFRFunction->F_FunctionName = 'Post';
+        $postRFRFunction->F_FK_Module_id = 73;
+        $postRFRFunction->F_Order_id     = 10;
+        $postRFRFunction->F_Trigger      = 'post';
+        $postRFRFunction->F_Inside       = 1;
+
+        $postRFRFunction->save();
     }
 
 }
