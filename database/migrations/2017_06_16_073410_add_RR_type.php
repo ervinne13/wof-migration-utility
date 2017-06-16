@@ -19,6 +19,10 @@ class AddRRType extends Migration {
                 if (!Schema::hasColumn('tblINV_RR', 'RR_Type')) {
                     $table->string('RR_Type', 10)->nullable();
                 }
+
+                if (!Schema::hasColumn('tblINV_RR', 'RR_RefFrom')) {
+                    $table->string('RR_RefFrom', 30)->nullable();
+                }
             });
 
             DB::commit();
@@ -40,6 +44,10 @@ class AddRRType extends Migration {
             Schema::table('tblINV_RR', function ($table) {
                 if (Schema::hasColumn('tblINV_RR', 'RR_Type')) {
                     $table->dropColumn('RR_Type');
+                }
+
+                if (Schema::hasColumn('tblINV_RR', 'RR_RefFrom')) {
+                    $table->dropColumn('RR_RefFrom');
                 }
             });
 

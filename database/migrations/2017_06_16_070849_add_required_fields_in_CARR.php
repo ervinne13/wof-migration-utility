@@ -28,8 +28,20 @@ class AddRequiredFieldsInCARR extends Migration {
                     $table->string('CARRD_TIN', 100)->nullable();
                 }
 
+                if (!Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_VATAmount')) {
+                    $table->decimal('CARRD_VATAmount', 12, 4)->default(0);
+                }
+
                 if (!Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_NetofVAT')) {
                     $table->decimal('CARRD_NetofVAT', 12, 4)->default(0);
+                }
+
+                if (!Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_SupplierID')) {
+                    $table->string('CARRD_SupplierID', 30)->nullable();
+                }
+
+                if (!Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_RR_RefFrom')) {
+                    $table->string('CARRD_RR_RefFrom', 30)->nullable();
                 }
             });
 
@@ -62,8 +74,20 @@ class AddRequiredFieldsInCARR extends Migration {
                     $table->dropColumn('CARRD_TIN');
                 }
 
+                if (Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_VATAmount')) {
+                    $table->dropColumn('CARRD_VATAmount');
+                }
+
                 if (Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_NetofVAT')) {
                     $table->dropColumn('CARRD_NetofVAT');
+                }
+
+                if (Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_SupplierID')) {
+                    $table->dropColumn('CARRD_SupplierID');
+                }
+
+                if (Schema::hasColumn('tblCOM_CARRLiquidationDetail', 'CARRD_RR_RefFrom')) {
+                    $table->dropColumn('CARRD_RR_RefFrom');
                 }
             });
 
