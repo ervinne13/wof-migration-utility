@@ -19,6 +19,10 @@ class AddRtvFinalizeFields extends Migration {
                 if (!Schema::hasColumn('tblINV_Retrieval', 'RV_FinalizedWeekNo')) {
                     $table->integer('RV_FinalizedWeekNo')->default(0);
                 }
+
+                if (!Schema::hasColumn('tblINV_Retrieval', 'RV_CurrentWeekPartialFinalized')) {
+                    $table->boolean('RV_CurrentWeekPartialFinalized')->default(false);
+                }
             });
 
             DB::commit();
@@ -40,6 +44,10 @@ class AddRtvFinalizeFields extends Migration {
             Schema::table('tblINV_Retrieval', function ($table) {
                 if (Schema::hasColumn('tblINV_Retrieval', 'RV_FinalizedWeekNo')) {
                     $table->dropColumn('RV_FinalizedWeekNo');
+                }
+
+                if (Schema::hasColumn('tblINV_Retrieval', 'RV_CurrentWeekPartialFinalized')) {
+                    $table->dropColumn('RV_CurrentWeekPartialFinalized');
                 }
             });
 
