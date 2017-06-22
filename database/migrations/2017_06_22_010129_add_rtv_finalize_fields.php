@@ -20,8 +20,8 @@ class AddRtvFinalizeFields extends Migration {
                     $table->integer('RV_FinalizedWeekNo')->default(0);
                 }
 
-                if (!Schema::hasColumn('tblINV_Retrieval', 'RV_CurrentWeekPartialFinalized')) {
-                    $table->boolean('RV_CurrentWeekPartialFinalized')->default(false);
+                if (!Schema::hasColumn('tblINV_Retrieval', 'RV_CurrentPartialWeekDate')) {
+                    $table->timestamp('RV_CurrentPartialWeekDate')->nullable();
                 }
             });
 
@@ -46,8 +46,8 @@ class AddRtvFinalizeFields extends Migration {
                     $table->dropColumn('RV_FinalizedWeekNo');
                 }
 
-                if (Schema::hasColumn('tblINV_Retrieval', 'RV_CurrentWeekPartialFinalized')) {
-                    $table->dropColumn('RV_CurrentWeekPartialFinalized');
+                if (Schema::hasColumn('tblINV_Retrieval', 'RV_CurrentPartialWeekDate')) {
+                    $table->dropColumn('RV_CurrentPartialWeekDate');
                 }
             });
 
