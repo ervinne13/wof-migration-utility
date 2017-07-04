@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class AddRetrievalDetailsStatusField extends Migration {
 
@@ -17,37 +17,37 @@ class AddRetrievalDetailsStatusField extends Migration {
 
             Schema::table('tblINV_RetrievalPisoCoin', function ($table) {
                 if (!Schema::hasColumn('tblINV_RetrievalPisoCoin', 'RVPC_Status')) {
-                    $table->boolean('RVPC_Status')->default(false);
+                    $table->string('RVPC_Status', 30)->default("Open");
                 }
             });
 
             Schema::table('tblINV_RetrievalPisoToken', function ($table) {
                 if (!Schema::hasColumn('tblINV_RetrievalPisoToken', 'RVPT_Status')) {
-                    $table->boolean('RVPT_Status')->default(false);
+                    $table->string('RVPT_Status', 30)->default("Open");
                 }
             });
 
             Schema::table('tblINV_RetrievalTicket', function ($table) {
                 if (!Schema::hasColumn('tblINV_RetrievalTicket', 'RVTR_Status')) {
-                    $table->boolean('RVTR_Status')->default(false);
+                    $table->string('RVTR_Status', 30)->default("Open");
                 }
             });
 
             Schema::table('tblINV_RetrievalToken', function ($table) {
                 if (!Schema::hasColumn('tblINV_RetrievalToken', 'RVT_Status')) {
-                    $table->boolean('RVT_Status')->default(false);
+                    $table->string('RVT_Status', 30)->default("Open");
                 }
             });
 
             Schema::table('tblINV_RetrievalTicketVariance', function ($table) {
                 if (!Schema::hasColumn('tblINV_RetrievalTicketVariance', 'RVTIV_Status')) {
-                    $table->boolean('RVTIV_Status')->default(false);
+                    $table->string('RVTIV_Status', 30)->default("Open");
                 }
             });
 
             Schema::table('tblINV_RetrievalTokenVariance', function ($table) {
                 if (!Schema::hasColumn('tblINV_RetrievalTokenVariance', 'RVTOV_Status')) {
-                    $table->boolean('RVTOV_Status')->default(false);
+                    $table->string('RVTOV_Status', 30)->default("Open");
                 }
             });
 
@@ -69,37 +69,37 @@ class AddRetrievalDetailsStatusField extends Migration {
 
             Schema::table('tblINV_RetrievalPisoCoin', function ($table) {
                 if (Schema::hasColumn('tblINV_RetrievalPisoCoin', 'RVPC_Status')) {
-                    $table->dropColumn('RVPC_Status');
+                    $table->dropColumn('RVPC_Status', 30);
                 }
             });
 
             Schema::table('tblINV_RetrievalPisoToken', function ($table) {
                 if (Schema::hasColumn('tblINV_RetrievalPisoToken', 'RVPT_Status')) {
-                    $table->dropColumn('RVPT_Status');
+                    $table->dropColumn('RVPT_Status', 30);
                 }
             });
 
             Schema::table('tblINV_RetrievalTicket', function ($table) {
                 if (Schema::hasColumn('tblINV_RetrievalTicket', 'RVTR_Status')) {
-                    $table->dropColumn('RVTR_Status');
+                    $table->dropColumn('RVTR_Status', 30);
                 }
             });
 
             Schema::table('tblINV_RetrievalToken', function ($table) {
                 if (Schema::hasColumn('tblINV_RetrievalToken', 'RVT_Status')) {
-                    $table->dropColumn('RVT_Status');
+                    $table->dropColumn('RVT_Status', 30);
                 }
             });
 
             Schema::table('tblINV_RetrievalTicketVariance', function ($table) {
                 if (Schema::hasColumn('tblINV_RetrievalTicketVariance', 'RVTIV_Status')) {
-                    $table->dropColumn('RVTIV_Status');
+                    $table->dropColumn('RVTIV_Status', 30);
                 }
             });
 
             Schema::table('tblINV_RetrievalTokenVariance', function ($table) {
                 if (Schema::hasColumn('tblINV_RetrievalTokenVariance', 'RVTOV_Status')) {
-                    $table->dropColumn('RVTOV_Status');
+                    $table->dropColumn('RVTOV_Status', 30);
                 }
             });
 
