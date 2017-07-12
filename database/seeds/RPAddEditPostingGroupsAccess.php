@@ -4,6 +4,9 @@ use App\Models\Module\ModuleFunction;
 use App\Models\UserAccess;
 use Illuminate\Database\Seeder;
 
+/**
+ * php artisan db:seed --class=RPAddEditPostingGroupsAccess
+ */
 class RPAddEditPostingGroupsAccess extends Seeder {
 
     /**

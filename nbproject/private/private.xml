@@ -4,5 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="WoF"/>
         <group name="Payroll"/>
+        <group name="WoF &amp; ESS">
+            <file>file:/C:/Bitnami/wappstack-5.6.26-1/apps/wof-migration-utility/database/seeds/RPAddEditPostingGroupsAccess.php</file>
+        </group>
     </open-files>
 </project-private>
