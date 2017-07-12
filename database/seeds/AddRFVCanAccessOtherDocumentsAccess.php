@@ -34,16 +34,16 @@ class AddRFVCanAccessOtherDocumentsAccess extends Seeder {
 
         $canAccessAllRFVDocuments = UserAccess::findOrNew(946);
 
-        $canAccessAllRFVDocuments->UA_FK_Module_id         = 283;
-        $canAccessAllReimbursementDocuments->UA_AccessName = 'Can View All Documents';
-        $canAccessAllReimbursementDocuments->UA_Trigger    = 'can-view-all-documents';
-        $canAccessAllRFVDocuments->UA_Icon                 = "glyphicon-plus";
-        $canAccessAllRFVDocuments->UA_Access_id            = 946;
-        $canAccessAllRFVDocuments->UA_Outside              = 0;
-        $canAccessAllRFVDocuments->UA_Inside               = 1;
-        $canAccessAllRFVDocuments->UA_Inline               = 1;
-        $canAccessAllRFVDocuments->UA_Header               = 0;
-        $canAccessAllRFVDocuments->UA_Get                  = 0;
+        $canAccessAllRFVDocuments->UA_FK_Module_id = 283;
+        $canAccessAllRFVDocuments->UA_AccessName   = 'Can View All Documents';
+        $canAccessAllRFVDocuments->UA_Trigger      = 'can-view-all-documents';
+        $canAccessAllRFVDocuments->UA_Icon         = "glyphicon-plus";
+        $canAccessAllRFVDocuments->UA_Access_id    = 946;
+        $canAccessAllRFVDocuments->UA_Outside      = 0;
+        $canAccessAllRFVDocuments->UA_Inside       = 1;
+        $canAccessAllRFVDocuments->UA_Inline       = 1;
+        $canAccessAllRFVDocuments->UA_Header       = 0;
+        $canAccessAllRFVDocuments->UA_Get          = 0;
 
         $canAccessAllRFVDocuments->save();
     }
