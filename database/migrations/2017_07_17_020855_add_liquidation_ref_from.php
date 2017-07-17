@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStoreProfileCustomerAccount extends Migration {
+class AddLiquidationRefFrom extends Migration {
 
     /**
      * Run the migrations.
@@ -15,9 +15,9 @@ class AddStoreProfileCustomerAccount extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblINV_StoreProfile', function ($table) {
-                if (!Schema::hasColumn('tblINV_StoreProfile', 'SP_CustomerAccountID')) {
-                    $table->string('SP_CustomerAccountID', 30)->nullable();
+            Schema::table('tblACC_RFV', function ($table) {
+                if (!Schema::hasColumn('tblACC_RFV', 'RFV_LiquidationRefFrom')) {
+                    $table->string('RFV_LiquidationRefFrom', 30)->nullable();
                 }
             });
 
@@ -37,9 +37,9 @@ class AddStoreProfileCustomerAccount extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblINV_StoreProfile', function ($table) {
-                if (Schema::hasColumn('tblINV_StoreProfile', 'SP_CustomerAccountID')) {
-                    $table->dropColumn('SP_CustomerAccountID');
+            Schema::table('tblACC_RFV', function ($table) {
+                if (Schema::hasColumn('tblACC_RFV', 'RFV_LiquidationRefFrom')) {
+                    $table->dropColumn('RFV_LiquidationRefFrom');
                 }
             });
 
