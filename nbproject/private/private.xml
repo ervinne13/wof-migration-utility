@@ -4,6 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Payroll"/>
         <group name="WoF &amp; ESS"/>
-        <group name="WoF"/>
+        <group name="WoF">
+            <file>file:/C:/Bitnami/wappstack-5.6.26-1/apps/wof-migration-utility/database/migrations/2017_07_24_070403_add_location_is_satellite_field.php</file>
+        </group>
     </open-files>
 </project-private>
