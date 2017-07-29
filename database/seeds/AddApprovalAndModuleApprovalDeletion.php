@@ -18,7 +18,7 @@ class AddApprovalAndModuleApprovalDeletion extends Seeder {
 
         $approvalDeleteAccess->UA_FK_Module_id = 248;
         $approvalDeleteAccess->UA_AccessName   = 'Delete';
-        $approvalDeleteAccess->UA_Trigger      = 'l-del';
+        $approvalDeleteAccess->UA_Trigger      = 'action-delete-approval-setup';
         $approvalDeleteAccess->UA_Icon         = "glyphicon-remove";
         $approvalDeleteAccess->UA_Access_id    = 959;
         $approvalDeleteAccess->UA_Outside      = 1;
@@ -31,7 +31,7 @@ class AddApprovalAndModuleApprovalDeletion extends Seeder {
 
         $moduleApprovalDeleteAccess->UA_FK_Module_id = 322;
         $moduleApprovalDeleteAccess->UA_AccessName   = 'Delete';
-        $moduleApprovalDeleteAccess->UA_Trigger      = 'l-del';
+        $moduleApprovalDeleteAccess->UA_Trigger      = 'action-delete-module-approval-setup';
         $moduleApprovalDeleteAccess->UA_Icon         = "glyphicon-remove";
         $moduleApprovalDeleteAccess->UA_Access_id    = 960;
         $moduleApprovalDeleteAccess->UA_Outside      = 1;
