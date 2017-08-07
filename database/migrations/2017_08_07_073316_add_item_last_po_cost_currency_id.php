@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddItemLastPoCostUOMId extends Migration {
+class AddItemLastPoCostCurrencyId extends Migration {
 
     /**
      * Run the migrations.
@@ -16,8 +16,8 @@ class AddItemLastPoCostUOMId extends Migration {
             DB::beginTransaction();
 
             Schema::table('tblINV_Item', function ($table) {
-                if (!Schema::hasColumn('tblINV_Item', 'IM_LastPOCostUOMId')) {
-                    $table->bigInteger('IM_LastPOCostUOMId')->nullable();
+                if (!Schema::hasColumn('tblINV_Item', 'IM_LastPOCostCurrencyId')) {
+                    $table->bigInteger('IM_LastPOCostCurrencyId')->nullable();
                 }
             });
 
@@ -38,8 +38,8 @@ class AddItemLastPoCostUOMId extends Migration {
             DB::beginTransaction();
 
             Schema::table('tblINV_Item', function ($table) {
-                if (!Schema::hasColumn('tblINV_Item', 'IM_LastPOCostUOMId')) {
-                    $table->dropColumn('IM_LastPOCostUOMId');
+                if (!Schema::hasColumn('tblINV_Item', 'IM_LastPOCostCurrencyId')) {
+                    $table->dropColumn('IM_LastPOCostCurrencyId');
                 }
             });
 
