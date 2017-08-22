@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRFVLiquidationRRFields extends Migration {
+class AddFinalizedRetrievalTypesColumn extends Migration {
 
     /**
      * Run the migrations.
@@ -15,9 +15,9 @@ class AddRFVLiquidationRRFields extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblACC_RFV', function ($table) {
-                if (!Schema::hasColumn('tblACC_RFV', 'RFV_RRBased')) {
-                    $table->boolean('RFV_RRBased')->default(false);
+            Schema::table('tblINV_Retrieval', function ($table) {
+                if (!Schema::hasColumn('tblINV_Retrieval', 'RV_FinalizedRetrievalTypes')) {
+                    $table->string('RV_FinalizedRetrievalTypes', 120)->nullable();
                 }
             });
 
@@ -37,9 +37,9 @@ class AddRFVLiquidationRRFields extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblACC_RFV', function ($table) {
-                if (!Schema::hasColumn('tblACC_RFV', 'RFV_RRBased')) {
-                    $table->dropColumn('RFV_RRBased');
+            Schema::table('tblINV_Retrieval', function ($table) {
+                if (!Schema::hasColumn('tblINV_Retrieval', 'RV_FinalizedRetrievalTypes')) {
+                    $table->dropColumn('RV_FinalizedRetrievalTypes');
                 }
             });
 
