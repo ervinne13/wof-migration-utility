@@ -15,11 +15,11 @@ class AddRFVLiquidationRRFields extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblACC_RFV', function ($table) {
-                if (!Schema::hasColumn('tblACC_RFV', 'RFV_RRBased')) {
-                    $table->boolean('RFV_RRBased')->default(false);
-                }
-            });
+            // Schema::table('tblACC_RFV', function ($table) {
+            //     if (!Schema::hasColumn('tblACC_RFV', 'RFV_RRBased')) {
+            //         $table->boolean('RFV_RRBased')->default(false);
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {
@@ -37,11 +37,11 @@ class AddRFVLiquidationRRFields extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblACC_RFV', function ($table) {
-                if (!Schema::hasColumn('tblACC_RFV', 'RFV_RRBased')) {
-                    $table->dropColumn('RFV_RRBased');
-                }
-            });
+            // Schema::table('tblACC_RFV', function ($table) {
+            //     if (!Schema::hasColumn('tblACC_RFV', 'RFV_RRBased')) {
+            //         $table->dropColumn('RFV_RRBased');
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {

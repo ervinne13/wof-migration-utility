@@ -15,11 +15,11 @@ class AddSofNumberSeries extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblCOM_SourceOfFund', function ($table) {
-                if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_NSId')) {
-                    $table->string('SOF_NSId', 30);
-                }
-            });
+            // Schema::table('tblCOM_SourceOfFund', function ($table) {
+            //     if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_NSId')) {
+            //         $table->string('SOF_NSId', 30);
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {
@@ -37,11 +37,11 @@ class AddSofNumberSeries extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblCOM_SourceOfFund', function ($table) {
-                if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_NSId')) {
-                    $table->dropColumn('SOF_NSId');
-                }
-            });
+            // Schema::table('tblCOM_SourceOfFund', function ($table) {
+            //     if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_NSId')) {
+            //         $table->dropColumn('SOF_NSId');
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {

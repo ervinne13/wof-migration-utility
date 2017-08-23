@@ -15,15 +15,15 @@ class SofRfrNumberSeries extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblCOM_SourceOfFund', function ($table) {
-                if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_NSId')) {
-                    $table->renameColumn('SOF_NSId', 'SOF_RFVNSId')->nullable();
-                }
+            // Schema::table('tblCOM_SourceOfFund', function ($table) {
+            //     if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_NSId')) {
+            //         $table->renameColumn('SOF_NSId', 'SOF_RFVNSId')->nullable();
+            //     }
 
-                if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_RFRNSId')) {
-                    $table->string('SOF_RFRNSId', 30)->nullable();
-                }
-            });
+            //     if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_RFRNSId')) {
+            //         $table->string('SOF_RFRNSId', 30)->nullable();
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {
@@ -41,15 +41,15 @@ class SofRfrNumberSeries extends Migration {
         try {
             DB::beginTransaction();
 
-            Schema::table('tblCOM_SourceOfFund', function ($table) {
-                if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_RFVNSId')) {
-                    $table->renameColumn('SOF_RFVNSId', 'SOF_NSId');
-                }
+            // Schema::table('tblCOM_SourceOfFund', function ($table) {
+            //     if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_RFVNSId')) {
+            //         $table->renameColumn('SOF_RFVNSId', 'SOF_NSId');
+            //     }
 
-                if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_RFRNSId')) {
-                    $table->dropColumn('SOF_RFRNSId');
-                }
-            });
+            //     if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_RFRNSId')) {
+            //         $table->dropColumn('SOF_RFRNSId');
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {

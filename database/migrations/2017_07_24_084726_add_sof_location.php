@@ -14,11 +14,11 @@ class AddSofLocation extends Migration { /**
         try {
             DB::beginTransaction();
 
-            Schema::table('tblCOM_SourceOfFund', function ($table) {
-                if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_Location')) {
-                    $table->string('SOF_Location', 30);
-                }
-            });
+            // Schema::table('tblCOM_SourceOfFund', function ($table) {
+            //     if (!Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_Location')) {
+            //         $table->string('SOF_Location', 30);
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {
@@ -36,11 +36,11 @@ class AddSofLocation extends Migration { /**
         try {
             DB::beginTransaction();
 
-            Schema::table('tblCOM_SourceOfFund', function ($table) {
-                if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_Location')) {
-                    $table->dropColumn('SOF_Location');
-                }
-            });
+            // Schema::table('tblCOM_SourceOfFund', function ($table) {
+            //     if (Schema::hasColumn('tblCOM_SourceOfFund', 'SOF_Location')) {
+            //         $table->dropColumn('SOF_Location');
+            //     }
+            // });
 
             DB::commit();
         } catch (Exception $e) {
