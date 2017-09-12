@@ -5,5 +5,8 @@
         <group name="Payroll"/>
         <group name="WoF"/>
         <group name="WoF &amp; ESS"/>
+        <group name="WoF &amp; Synchronizer">
+            <file>file:/C:/Bitnami/wappstack-5.6.26-1/apps/wof-migration-utility/database/seeds/AddFinalizeFunctionsForPDI.php</file>
+        </group>
     </open-files>
 </project-private>
